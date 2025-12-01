@@ -1,0 +1,21 @@
+# Maven
+backend/target/
+
+# Node
+frontend/node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# H2 temp files
+*.db
+*.mv.db
+*.trace.db
