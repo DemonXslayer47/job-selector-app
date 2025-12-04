@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/navbar.css";
 
@@ -7,73 +6,140 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isLoggedIn = !!localStorage.getItem("token");
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
-  // Pages where navbar must NOT show login/register:
-  const hideAuthPages = ["/skills", "/jobs", "/dashboard", "/learn-skills", "/profile"];
+  // 🔥 IMPORTANT: Detect token changes instantly
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setIsLoggedIn(!!localStorage.getItem("token"));
+    };
 
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
-  const hideAuthButtons = isLoggedIn && hideAuthPages.includes(location.pathname);
-
-  const hideProfileIcon = location.pathname === "/profile";
+  // Also update when route changes (React internal navigation)
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem("token"));
+  }, [location.pathname]);
 
   return (
     <nav className="nav-container">
-      
+
       <div className="nav-left" onClick={() => navigate("/")}>
-  <h1 className="nav-logo">
-    🤖 Job Selector – Intelligent Job & Course Recommendation System
-  </h1>
-</div>
+        <h1 className="nav-logo">
+          🤖 Job Selector – Intelligent Job & Course Recommendation System
+        </h1>
+      </div>
 
-
-      {/* RIGHT SIDE BUTTONS */}
       <div className="nav-right">
-        {isLoggedIn && !["/login", "/register", "/forgot-password","/"].includes(location.pathname) && (
-  <button className="nav-btn-filled" onClick={() => navigate("/dashboard")}>
-    Home
-  </button>
-)}
-
-
-
-
-
-        {/* If user logged out → show Home / Login / Register */}
-        {!hideAuthButtons && !isLoggedIn && (
+        {/* SHOW Public buttons if NOT logged in */}
+        {!isLoggedIn && (
           <>
-            <button className="nav-btn-filled" onClick={() => navigate("/")}>
-              Home
-            </button>
-
-            <button className="nav-btn-filled" onClick={() => navigate("/login")}>
-              Login
-            </button>
-
-            <button className="nav-btn-filled" onClick={() => navigate("/register")}>
-              Register
-            </button>
+            <button className="nav-btn-filled" onClick={() => navigate("/")}>Home</button>
+            <button className="nav-btn-filled" onClick={() => navigate("/login")}>Login</button>
+            <button className="nav-btn-filled" onClick={() => navigate("/register")}>Register</button>
           </>
         )}
 
-          {/* Show ONLY ONE profile icon and hide it on profile page */}
-{isLoggedIn &&
- !["/login", "/register", "/forgot-password", "/"].includes(location.pathname) &&
- location.pathname !== "/profile" && (
-  <div
-    className="profile-icon"
-    onClick={() => navigate("/profile")}
-    title="My Profile"
-  >
-    👤
-  </div>
-)}
+        {/* SHOW Dashboard Home if logged in */}
+        {isLoggedIn && location.pathname !== "/dashboard" && (
+          <button className="nav-btn-filled" onClick={() => navigate("/dashboard")}>
+            Home
+          </button>
+        )}
 
-
+        {/* SHOW Profile icon if logged in */}
+        {isLoggedIn && location.pathname !== "/profile" && (
+          <div
+            className="profile-icon"
+            onClick={() => navigate("/profile")}
+            title="My Profile"
+          >
+            👤
+          </div>
+        )}
       </div>
+
     </nav>
   );
 }
+
+// import React from "react";
+// import { useNavigate, useLocation } from "react-router-dom";
+// import "../styles/navbar.css";
+
+// export default function Navbar() {
+//   const navigate = useNavigate();
+//   const location = useLocation();
+
+//   const isLoggedIn = !!localStorage.getItem("token");
+
+//   // Pages where navbar must NOT show login/register:
+//   const hideAuthPages = ["/skills", "/jobs", "/dashboard", "/learn-skills", "/profile"];
+
+
+//   const hideAuthButtons = isLoggedIn && hideAuthPages.includes(location.pathname);
+
+//   const hideProfileIcon = location.pathname === "/profile";
+
+//   return (
+//     <nav className="nav-container">
+      
+//       <div className="nav-left" onClick={() => navigate("/")}>
+//   <h1 className="nav-logo">
+//     🤖 Job Selector – Intelligent Job & Course Recommendation System
+//   </h1>
+// </div>
+
+
+//       {/* RIGHT SIDE BUTTONS */}
+//       <div className="nav-right">
+//         {isLoggedIn && !["/login", "/register", "/forgot-password","/"].includes(location.pathname) && (
+//   <button className="nav-btn-filled" onClick={() => navigate("/dashboard")}>
+//     Home
+//   </button>
+// )}
+
+
+
+
+
+//         {/* If user logged out → show Home / Login / Register */}
+//         {!hideAuthButtons && !isLoggedIn && (
+//           <>
+//             <button className="nav-btn-filled" onClick={() => navigate("/")}>
+//               Home
+//             </button>
+
+//             <button className="nav-btn-filled" onClick={() => navigate("/login")}>
+//               Login
+//             </button>
+
+//             <button className="nav-btn-filled" onClick={() => navigate("/register")}>
+//               Register
+//             </button>
+//           </>
+//         )}
+
+//           {/* Show ONLY ONE profile icon and hide it on profile page */}
+// {isLoggedIn &&
+//  !["/login", "/register", "/forgot-password", "/"].includes(location.pathname) &&
+//  location.pathname !== "/profile" && (
+//   <div
+//     className="profile-icon"
+//     onClick={() => navigate("/profile")}
+//     title="My Profile"
+//   >
+//     👤
+//   </div>
+// )}
+
+
+//       </div>
+//     </nav>
+//   );
+// }
 // import React from "react";
 // import { useNavigate, useLocation } from "react-router-dom";
 // import "../styles/navbar.css";

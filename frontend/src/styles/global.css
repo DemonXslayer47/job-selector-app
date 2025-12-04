@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+ 
   box-sizing: border-box;
 }
 
@@ -8,7 +8,8 @@ body {
   background: linear-gradient(135deg, #7b66ff, #5ac8ff) !important;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+
+
 }
 
 
