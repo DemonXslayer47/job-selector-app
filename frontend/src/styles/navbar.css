@@ -1,0 +1,82 @@
+.nav-container {
+  height: 80px;
+  width: 100%;
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  background: transparent !important;  /* FULLY TRANSPARENT */
+  border: none;
+  backdrop-filter: none;                /* remove white blur effect */
+  -webkit-backdrop-filter: none;
+}
+
+.nav-logo {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #ffffff !important;   /* WHITE TEXT */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo icon and text */
+}
+
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-right button {
+  z-index: 9999;
+  position: relative;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.nav-btn-outline {
+  padding: 8px 18px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn-outline:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.nav-btn-filled {
+  padding: 8px 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn-filled:hover {
+  transform: translateY(-3px);
+}

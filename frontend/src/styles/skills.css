@@ -1,0 +1,180 @@
+/* .skills-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.skill-input-box {
+  position: relative;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.skill-input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 18px;
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.suggestion-list {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  margin-top: 2px;
+  list-style: none;
+  padding: 0;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.suggestion-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-list li:hover {
+  background: #eef3ff;
+}
+
+.selected-skills {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-tag {
+  background: #e8edff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.skill-tag span {
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.find-jobs-btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+}
+
+.find-jobs-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+} */
+.skills-page {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.skills-topbar {
+  padding-top: 130px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.profile-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.skills-subtext {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.skill-input-box {
+  position: relative;
+  width: 100%;
+}
+
+.skill-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.suggestion-list {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion-list li {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.suggestion-list li:hover {
+  background: #f2f2f2;
+}
+
+.selected-skills {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: #007bff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-tag span {
+  cursor: pointer;
+}
+
+.find-jobs-btn {
+  margin-top: 30px;
+  padding: 14px 26px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  background: #0052cc;
+  cursor: pointer;
+}
+
+.find-jobs-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}

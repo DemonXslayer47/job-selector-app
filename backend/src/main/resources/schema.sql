@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS user_skill;
 DROP TABLE IF EXISTS course;
 DROP TABLE IF EXISTS skill;
 DROP TABLE IF EXISTS job;
-
+DROP TABLE IF EXISTS users;
 CREATE TABLE skill (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
@@ -28,6 +28,7 @@ CREATE TABLE job_skill_mapping (
 
 CREATE TABLE course (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    skill_name VARCHAR(100) NOT NULL,
     title VARCHAR(255),
     provider VARCHAR(255),
     link VARCHAR(255),
@@ -40,4 +41,11 @@ CREATE TABLE user_skill (
     id INT AUTO_INCREMENT PRIMARY KEY,
     skill_id INT,
     FOREIGN KEY (skill_id) REFERENCES skill(id)
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
 );

@@ -13,5 +13,10 @@ public class UserSkill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer skillId;  // References Skill table
+    // Later we will add userId when login is implemented
+    // For now users just select skills anonymously
+
+    @ManyToOne
+    @JoinColumn(name = "skill_id")
+    private Skill skill;
 }

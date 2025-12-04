@@ -1,0 +1,108 @@
+/* PAGE GRADIENT (same as homepage) */
+.auth-page-gradient {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #7c6ff6, #5ec6f3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center wrapper */
+.auth-wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+/* Title */
+.auth-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+/* Main card design */
+.auth-card-large {
+  width: 430px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+}
+
+.login-card-height {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.auth-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+/* Inputs */
+.auth-card-large input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Button */
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #0066ff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-btn:hover {
+  background: #004fcc;
+}
+
+/* Footer link */
+.auth-footer {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.auth-footer span {
+  color: #0066ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Error messages */
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Success messages */
+.success-msg {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+.forgot-text {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #0066ff;
+  cursor: pointer;
+}
+
+
