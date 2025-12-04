@@ -275,7 +275,7 @@ export default function LearnSkills() {
         <div className="learn-page">
 
             {/* MAIN HEADER */}
-            <h4 className="learn-title">
+            <h4 className="job-title">
                 Learn Missing Skills for <span className="job-title">{jobTitle}</span>
             </h4>
 
