@@ -1,0 +1,136 @@
+/* PAGE BACKGROUND → same gradient as dashboard */
+.jobs-wrapper {
+  padding: 40px 60px;
+  min-height: 100vh;
+  padding-top: 120px; /* space under navbar */
+  background: linear-gradient(135deg, #7b66ff, #5ac8ff) !important;
+}
+
+/* PAGE TITLE → bigger + white */
+
+
+/* GRID */
+.jobs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 40px;
+}
+
+/* CARD → cleaner, not blue inside (white card like dashboard cards) */
+.job-card {
+  background: rgba(255, 255, 255, 0.95);   /* soft white */
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.10);
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  min-height: 260px;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.7);   /* softer highlight */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* JOB TITLE (bigger + darker) */
+
+.jobs-title {
+  text-align: center;
+  font-size: 26px;         /* increased */
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #ffffff;          /* white like dashboard */
+  letter-spacing: 1px;
+}
+.job-title {
+    color: #0f172a !important;   /* very dark navy for perfect visibility */
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+
+/* COMPANY */
+.job-company {
+  font-size: 16px;         /* increased */
+  color: #475569;
+}
+
+/* LOCATION */
+.job-location {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+/* MATCH BADGE → reduce bright blue, make softer */
+.match-badge {
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6); /* darker → less bright */
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 15px;
+  width: fit-content;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(30, 58, 138, 0.5);
+}
+
+/* BUTTON ROW */
+.job-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* APPLY BUTTON → same blue but softer hover */
+.apply-btn {
+  background: #2563eb;
+  border: none;
+  padding: 12px 24px;      /* larger */
+  color: white;
+  font-size: 16px;         /* larger */
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.apply-btn:hover {
+  background: #1e40af;
+}
+
+/* LEARN BTN → softer grey */
+.learn-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 12px 24px;
+  color: #334155;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.learn-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+/* NO DATA PAGE */
+.no-data {
+  text-align: center;
+  padding-top: 120px;
+  color: white;
+  font-size: 22px;
+}
+
+.no-data button {
+  padding: 12px 22px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

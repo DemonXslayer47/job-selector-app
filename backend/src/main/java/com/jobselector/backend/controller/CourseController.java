@@ -1,23 +1,22 @@
 package com.jobselector.backend.controller;
 
-import com.jobselector.backend.dto.CourseRecommendationDTO;
-import com.jobselector.backend.service.CourseService;
+import com.jobselector.backend.repository.*;
+import com.jobselector.backend.model.Course;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@RequestMapping("/api/courses")
 @RequiredArgsConstructor
-@RequestMapping("/courses")
 public class CourseController {
 
-    private final CourseService courseService;
+    private final CourseRepository courseRepository;
 
-    @GetMapping("/recommend")
-    public List<CourseRecommendationDTO> recommendCourses() {
-        return courseService.getRecommendedCourses();
+    @GetMapping("/{skill}")
+    public List<Course> getCourses(@PathVariable String skill) {
+        return courseRepository.findBySkillNameIgnoreCase(skill);
     }
+
 }

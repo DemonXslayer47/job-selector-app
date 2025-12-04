@@ -1,23 +1,23 @@
 package com.jobselector.backend.controller;
 
+import com.jobselector.backend.repository.*;
 import com.jobselector.backend.model.Skill;
-import com.jobselector.backend.service.SkillService;
+import lombok.*;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@RequestMapping("/api/skills")
 @RequiredArgsConstructor
-@RequestMapping("/skills")
+@CrossOrigin(origins = "http://localhost:5173")
+
 public class SkillController {
 
-    private final SkillService skillService;
+    private final SkillRepository skillRepository;
 
     @GetMapping
-    public List<Skill> getSkills() {
-        return skillService.getAllSkills();
+    public List<Skill> allSkills() {
+        return skillRepository.findAll();
     }
 }

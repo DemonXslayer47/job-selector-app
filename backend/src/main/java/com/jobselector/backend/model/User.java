@@ -7,11 +7,17 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Skill {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private String name;
+    private String fullName;
+
+    @Column(unique = true)
+    private String email;
+
+    private String password;
 }

@@ -13,7 +13,16 @@ public class JobSkillMapping {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer jobId;
-    private Integer skillId;
+    // Reference Job
+    @ManyToOne
+    @JoinColumn(name = "job_id")
+    private Job job;
+
+    // Reference Skill
+    @ManyToOne
+    @JoinColumn(name = "skill_id")
+    private Skill skill;
+
+    // Optional: skill importance percentage or ranking
     private Integer importance;
 }
