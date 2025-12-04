@@ -2,7 +2,7 @@
 .jobs-wrapper {
   padding: 40px 60px;
   min-height: 100vh;
-  padding-top: 120px; /* space under navbar */
+  padding-top: 180px !important;
   background: linear-gradient(135deg, #7b66ff, #5ac8ff) !important;
 }
 
@@ -15,6 +15,10 @@
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
   gap: 40px;
 }
+body {
+    padding-top: 180px !important;
+}
+
 
 /* CARD → cleaner, not blue inside (white card like dashboard cards) */
 .job-card {

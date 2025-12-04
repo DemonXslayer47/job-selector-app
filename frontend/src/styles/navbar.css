@@ -11,10 +11,10 @@
   left: 0;
   z-index: 999;
 
-  background: transparent !important;  /* FULLY TRANSPARENT */
-  border: none;
-  backdrop-filter: none;                /* remove white blur effect */
-  -webkit-backdrop-filter: none;
+  background: rgba(0, 0, 0, 0.15) !important; /* FIX LAYER */
+  backdrop-filter: blur(6px);                 /* smooth blur */
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* separation shadow */
 }
 
 .nav-logo {

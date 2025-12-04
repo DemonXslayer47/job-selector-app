@@ -35,9 +35,7 @@ export default function LandingPage() {
         </div>
 
         <div className="hero-image" data-aos="zoom-in">
-          <img
-  src="https://cdn3d.iconscout.com/3d/premium/thumb/job-interview-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--recruitment-career-human-resource-pack-professions-illustrations-6571529.png"
-  alt="Job illustration"
+          <img  
   className="hero-illustration"
 />
 
@@ -64,7 +62,7 @@ export default function LandingPage() {
             />
             <h3>Skills</h3>
             <p>Choose the technologies you know & get instant job matches.</p>
-            <button onClick={() => navigate("/skills")}>Start</button>
+            {/* <button onClick={() => navigate("/skills")}>Start</button> */}
           </div>
 
           {/* Card 2 */}
@@ -75,7 +73,7 @@ export default function LandingPage() {
             />
             <h3>Job Insights</h3>
             <p>Understand industry demand and explore real job requirements.</p>
-            <button onClick={() => navigate("/jobs")}>Explore</button>
+            {/* <button onClick={() => navigate("/jobs")}>Explore</button> */}
           </div>
 
           {/* Card 3 */}
@@ -86,7 +84,7 @@ export default function LandingPage() {
             />
             <h3>Courses</h3>
             <p>Learn missing skills with curated courses from trusted sources.</p>
-            <button onClick={() => navigate("/courses")}>Learn</button>
+            {/* <button onClick={() => navigate("/courses")}>Learn</button> */}
           </div>
         </div>
       </section>
